@@ -2,7 +2,8 @@ openapi: 3.0.0
 servers:
   # Added by API Auto Mocking Plugin
   - description: File Upload tutorial
-    url: https://virtserver.swaggerhub.com/rpcabrera/Tutorial-FileUpload/1.0.0
+  #  url: https://virtserver.swaggerhub.com/rpcabrera/Tutorial-FileUpload/1.0.0
+    url: https://41deec69-e1d7-4660-88d3-9b4144790928.mock.pstmn.io
 info:
   description: File Upload web service for testing
   version: "1.0.0"
