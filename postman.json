@@ -1,107 +1,27 @@
-{
-  "openapi": "3.0.0",
-  "info": {
-    "version": "1.0.0",
-    "title": "Tutorial-FileUpload",
-    "license": {
-      "name": "MIT"
-    }
-  },
-  "servers": [
-    {
-      "url": "http://petstore.swagger.io/v1"
-    }
-  ],
-  "paths": {
-    "/user": {
-      "get": {
-        "summary": "Details about a user",
-        "operationId": "listUser",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "description": "ID of the user",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Details about a user",
-            "headers": {
-              "x-next": {
-                "description": "A link to the next page of responses",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "User": {
-        "type": "object",
-        "required": [
-          "id",
-          "name"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          },
-          "tag": {
-            "type": "string"
-          }
-        }
-      },
-      "Error": {
-        "type": "object",
-        "required": [
-          "code",
-          "message"
-        ],
-        "properties": {
-          "code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  }
-}
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: File Upload tutorial
+    url: https://virtserver.swaggerhub.com/rpcabrera/Tutorial-FileUpload/1.0.0
+info:
+  description: File Upload web service for testing
+  version: "1.0.0"
+  title: Simple File Upload tutorial
+  contact:
+    email: rigo.pena.cabrera@gmail.com
+paths:
+  /uploadfile:
+    post:
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: 'Upload successfully'
+          content:
+            text/plain:
+              schema:
+                type: string
