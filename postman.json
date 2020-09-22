@@ -11,7 +11,7 @@ info:
   contact:
     email: rigo.pena.cabrera@gmail.com
 paths:
-  /uploadfile:
+   /uploadfile:
     post:
       requestBody:
         content:
@@ -26,3 +26,15 @@ paths:
             text/plain:
               schema:
                 type: string
+   /downloadfile:
+    get:
+      summary: Download a binary file
+      responses:
+        '200':
+          description: Binary file
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+
